@@ -1,0 +1,10 @@
+{
+  "moduleAliases": {
+    "ts": {},
+    "br": {
+      "learnLive": {
+         "registry": "adotfrankLearnLive.azurecr.io"
+      }
+    }
+  }
+}

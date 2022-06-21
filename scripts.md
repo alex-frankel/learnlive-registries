@@ -1,6 +1,6 @@
 ## create bicep registry
 ```
-az acr create --name 'adotfrankLearnLive' --sku Basic -g brittle-hollow
+az acr create --name 'adotfrankLearnLive' --sku Basic -g learnlive-registries
 ```
 
 ## push module to registry
@@ -8,6 +8,13 @@ az acr create --name 'adotfrankLearnLive' --sku Basic -g brittle-hollow
 ```
 az bicep publish --file website.bicep --target 'br:adotfrankLearnLive.azurecr.io/website:v1'
 ```
+
+Show module is available:
+```
+az acr repository list -n adotfrankLearnLive -o table
+```
+
+Can also use the docker container tools extension.
 
 * aliases configured via bicep config will also be picked up here
 
@@ -29,5 +36,5 @@ Replace module definition
 ## deploy the file
 
 ```
-az deployment group create -f '02-consume-module.bicep'
+az deployment group create -f 'main.bicep'
 ```
